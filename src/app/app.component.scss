@@ -1,0 +1,50 @@
+@import '../pallet.scss';
+
+:host {
+  display: grid;
+  grid-gap: 16px;
+  margin: 24px;
+
+  & > .title,
+  & > .content {
+    padding: 8px 12px;
+  }
+
+  & > .title {
+    background: $primary;
+    color: $primary-contrast;
+    text-transform: uppercase;
+  }
+}
+
+.control-actions {
+  display: flex;
+  justify-content: space-between;
+
+  & > .btn {
+    font-size: 16px;
+    font-weight: bolder;
+    padding: 10px 20px;
+    background: $primary;
+    color: $primary-contrast;
+    border: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none;
+    transition: .35s ease-in-out;
+  }
+
+  & > .btn.-disabled {
+    pointer-events: none;
+    opacity: 0.75;
+    cursor: unset;
+  }
+
+  & > .btn.-start {
+    margin-right: auto;
+  }
+
+  & > .btn.-end {
+    margin-left: auto;
+  }
+}

@@ -1,0 +1,26 @@
+@import 'pallet.scss';
+
+.form-group {
+  display: grid;
+  grid-gap: 16px;
+  padding: 8px 12px;
+
+  & > .control {
+    display: grid;
+    grid-gap: 12px;
+  }
+
+  & > .control > .input {
+    font-size: 16px;
+    padding: 8px;
+    border: 2px solid $primary-contrast;
+
+    &:focus {
+      border-color: $primary;
+    }
+  }
+
+  & > .control > .input.ng-touched.ng-invalid {
+    border-color: #f00;
+  }
+}
