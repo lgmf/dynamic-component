@@ -6,7 +6,6 @@ import { Step1Component, Step2Component, FinishComponent } from './shared';
 interface Step {
   title: string;
   component: any;
-  value: string;
 }
 
 interface AppState {
@@ -20,23 +19,19 @@ const initialState: AppState = {
     {
       title: 'Personal Info',
       component: Step1Component,
-      value: 'value$'
     },
     {
       title: 'Contact',
       component: Step2Component,
-      value: 'value$'
     },
     {
       title: 'Finish',
       component: FinishComponent,
-      value: 'value$'
     },
   ],
   currentStep: {
     title: 'Personal Info',
-    component: Step1Component,
-    value: 'value$'
+    component: Step1Component
   },
   data: null
 };
@@ -79,9 +74,9 @@ export class AppComponent extends RxjsStore<AppState> {
     }
 
     const nextStep = this.state.steps[++this.index];
-    this.setState('data', this.data);
-    console.log(this.data);
+
     this.setState('currentStep', nextStep);
+    this.setState('data', this.data);
   }
 
   onValueChanged(value: any) {
